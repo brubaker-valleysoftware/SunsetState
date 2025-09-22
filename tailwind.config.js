@@ -11,10 +11,15 @@ module.exports = {
         darkgreen: "#3e4736",
         green: "#4f6041",
         lightyellow: "#f9f5e8",
+        teal: "#179988",
+        red: "#f03e32",
+        orange: "#f48817",
+        sand: "#f3ede0",
       },
       fontFamily: {
         baskerville: ["var(--font-baskerville)", "serif"],
         worksans: ["var(--font-work-sans)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
       spacing: {
         // Add custom spacing if needed

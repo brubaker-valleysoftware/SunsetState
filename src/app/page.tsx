@@ -2,6 +2,11 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import QuickContact from "../components/QuickContact";
+import WhatWeDo from "../components/WhatWeDo";
+import Services from "../components/Services";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -10,13 +15,25 @@ export default function Home() {
       <div id="home">
         <Header />
       </div>
+      <div id="quick-contact">
+        <QuickContact />
+      </div>
+      <div id="what-we-do">
+        <WhatWeDo />
+      </div>
       <div id="about">
         <About />
+      </div>
+      <div id="services">
+        <Services />
+      </div>
+      <div id="cta">
+        <CTA />
       </div>
       <div id="contact">
         <Contact />
       </div>
-      
+      <Footer />
     </main>
   );
 }

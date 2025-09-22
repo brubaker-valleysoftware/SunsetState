@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Libre_Baskerville, Work_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Libre_Baskerville, Work_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +16,12 @@ const baskerville = Libre_Baskerville({
   variable: "--font-baskerville",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // specify the weights you need
+  variable: "--font-montserrat", // optional: create a CSS variable
 });
 
 const workSans = Work_Sans({
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${baskerville.variable} ${workSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${baskerville.variable} ${workSans.variable} ${montserrat.variable} antialiased`}
       >
         {children}
       </body>

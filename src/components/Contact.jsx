@@ -1,36 +1,81 @@
-import { Mail, Instagram } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="bg-lightyellow text-darkgreen py-16">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-center md:justify-between">
-        {/* Left Side */}
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <h2 className="font-baskerville text-[40px] font-bold">I'd love to work with you!</h2>
+    <section id="contact-form" className="">
+      <div className="flex flex-col md:flex-row w-full">
+        {/* Left Side - Information (40%) */}
+        <div className="w-full md:w-2/5 bg-sand px-6 md:px-12 py-12 md:py-20 flex flex-col justify-center">
+          <div className="md:max-w-sm md:pl-8 mx-auto">
+            <h1 className="text-orange font-montserrat text-4xl md:text-5xl font-bold mb-6 md:mb-12">Get in Touch</h1>
+
+            <div className="space-y-8">
+              {/* Areas We Serve */}
+              <div>
+                <h3 className="text-black font-montserrat font-bold text-lg mb-1 uppercase">Areas We Serve</h3>
+                <p className="text-black font-montserrat">Mesa, Gilbert, Chandler, Queen Creek, and San Tan Valley</p>
+              </div>
+
+              {/* Email */}
+              <div>
+                <h3 className="text-black font-montserrat font-bold text-lg mb-1 uppercase">Email Address</h3>
+                <a
+                  href="mailto:info@sunsetstatejunkremoval.com"
+                  className="text-black font-montserrat hover:text-orange transition-colors"
+                >
+                  info@sunsetstatejunkremoval.com
+                </a>
+              </div>
+
+              {/* Phone */}
+              <div>
+                <h3 className="text-black font-montserrat font-bold text-lg mb-1 uppercase">Phone Number</h3>
+                <a href="tel:480-942-3373" className="text-black font-montserrat hover:text-orange transition-colors">
+                  480-942-3373
+                </a>
+              </div>
+
+              {/* Social Media */}
+              <div>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://instagram.com/sunsetstatejunkremoval"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black hover:text-orange transition-colors"
+                  >
+                    <Instagram size={24} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61580610920284"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black hover:text-orange transition-colors"
+                  >
+                    <Facebook size={24} />
+                  </a>
+                  <a
+                    href="https://youtube.com/@sunsetstatejunkremoval"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black hover:text-orange transition-colors"
+                  >
+                    <Youtube size={24} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Divider for desktop */}
-        <div className="hidden md:block w-px bg-darkgreen mx-20 h-48"></div>
-
-        {/* Right Side */}
-        <div className="md:w-1/2 space-y-6 text-center md:text-left">
-          <div>
-            <p className="font-worksans uppercase font-medium mb-2 tracking-wide">Email</p>
-            <a href="mailto:yourdesignsby.em@gmail.com" className="font-worksans hover:underline font-semibold">
-              yourdesignsby.em@gmail.com
-            </a>
-          </div>
-
-          <div>
-            <p className="font-worksans uppercase font-medium mb-2 tracking-wide">Social</p>
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 hover:text-green-700"
-            >
-              <Instagram size={22} />
-            </a>
+        {/* Right Side - Form Area (60%) */}
+        <div
+          className="w-full min-h-[500px] md:w-3/5 relative bg-center"
+          style={{ backgroundImage: "url(/images/bg-placeholder.png)" }}
+        >
+          {/* Placeholder for future form component */}
+          <div className="w-4/5 md:w-2/3 h-4/5 m-auto absolute inset-0 flex items-center justify-center bg-sand opacity-80 rounded-md">
+            <div className="text-black text-xl font-montserrat">Contact Form Component Goes Here</div>
           </div>
         </div>
       </div>

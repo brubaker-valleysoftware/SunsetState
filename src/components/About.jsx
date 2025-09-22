@@ -1,29 +1,41 @@
+"use client";
+
 export default function About() {
   return (
-    <section className="bg-yellow-50 py-24 px-6">
+    <section
+      className="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url(/images/bg-placeholder.png)" }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center">
-          {/* Photo Side - 40% */}
-          <div className="w-full md:w-2/5 flex justify-center">
-            <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-gray-200">
-              <img src="/images/Headshot.jpg" alt="Emily - Designer" className="w-full h-full object-cover" />
-            </div>
-          </div>
-
-          {/* Vertical Line - Hidden on mobile */}
-          <div className="hidden md:flex md:justify-center md:w-px">
-            <div className="w-px h-80 bg-darkgreen"></div>
-          </div>
-
           {/* Text Content - 60% */}
-          <div className="w-full md:w-3/5 md:pl-20 text-center md:text-left mt-20 md:mt-0 px-4">
-            <h2 className="font-baskerville text-4xl md:text-5xl font-bold text-green mb-3">Hi, I'm Emily</h2>
-            <p className="font-worksans text-lg text-green leading-relaxed max-w-2xl">
-              the designer behind Your Designs by Em. With years of experience in floorplans, elevations, and 3D
-              renderings, I specialize in helping design concepts take shape with clarity and style. I collaborate with
-              designers everywhere to craft renderings and plans that showcase their vision with precision. I work with
-              clients nationwide to deliver visuals that make every project shine.
+          <div className="w-full md:pl-20 text-center md:text-left px-4 relative z-10">
+            <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-teal mb-3">SIMPLE AND STRESS-FREE</h2>
+            <p className="font-montserrat text-lg text-sand leading-relaxed max-w-2xl mb-6">
+              We're a family-owned junk removal company serving the East Valley of Arizona. We are committed to showing
+              up on time, working hard, and treating your home or business with respect. Whether it's clearing out old
+              furniture, hauling away appliances, or tackling yard debris, we make the process simple and stress-free.
+              With fair pricing and a focus on reliable service, we're here to help our neighbors create clean,
+              clutter-free spaces.
             </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col md:flex-row gap-2 w-full md:w-auto">
+              <a
+                href="tel:480-942-3373"
+                className="bg-teal text-sand font-montserrat text-lg font-semibold px-8 py-2 rounded-lg transition-colors duration-300 hover:text-orange w-full md:w-auto text-center"
+              >
+                CALL US
+              </a>
+              <a
+                href="sms:480-942-3373"
+                className="bg-teal text-sand font-montserrat text-lg font-semibold px-8 py-2 rounded-lg transition-colors duration-300 hover:text-orange w-full md:w-auto text-center"
+              >
+                TEXT US
+              </a>
+            </div>
           </div>
         </div>
       </div>
