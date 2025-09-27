@@ -18,46 +18,70 @@ export default function Reviews() {
     setIsDragging2(false);
   };
 
-  const handleMouseMove = (e, containerRef, setPosition, isDragging) => {
+  const handleMove = (e, containerRef, setPosition, isDragging) => {
     if (!isDragging || !containerRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
+    // Handle both mouse and touch events
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const x = clientX - rect.left;
     const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
     setPosition(percentage);
   };
 
+  // Touch event handlers
+  const handleTouchStart1 = () => setIsDragging1(true);
+  const handleTouchStart2 = () => setIsDragging2(true);
+
+  const handleTouchEnd = () => {
+    setIsDragging1(false);
+    setIsDragging2(false);
+  };
+
   React.useEffect(() => {
-    const handleGlobalMouseUp = () => {
+    const handleGlobalEnd = () => {
       setIsDragging1(false);
       setIsDragging2(false);
     };
 
-    const handleGlobalMouseMove = (e) => {
+    const handleGlobalMove = (e) => {
+      // Prevent scrolling on mobile while dragging
+      if (isDragging1 || isDragging2) {
+        e.preventDefault();
+      }
+      
       if (isDragging1) {
-        handleMouseMove(e, container1Ref, setSlider1Position, isDragging1);
+        handleMove(e, container1Ref, setSlider1Position, isDragging1);
       }
       if (isDragging2) {
-        handleMouseMove(e, container2Ref, setSlider2Position, isDragging2);
+        handleMove(e, container2Ref, setSlider2Position, isDragging2);
       }
     };
 
     if (isDragging1 || isDragging2) {
-      document.addEventListener("mousemove", handleGlobalMouseMove);
-      document.addEventListener("mouseup", handleGlobalMouseUp);
+      // Mouse events
+      document.addEventListener("mousemove", handleGlobalMove);
+      document.addEventListener("mouseup", handleGlobalEnd);
+      
+      // Touch events
+      document.addEventListener("touchmove", handleGlobalMove, { passive: false });
+      document.addEventListener("touchend", handleGlobalEnd);
     }
 
     return () => {
-      document.removeEventListener("mousemove", handleGlobalMouseMove);
-      document.removeEventListener("mouseup", handleGlobalMouseUp);
+      document.removeEventListener("mousemove", handleGlobalMove);
+      document.removeEventListener("mouseup", handleGlobalEnd);
+      document.removeEventListener("touchmove", handleGlobalMove);
+      document.removeEventListener("touchend", handleGlobalEnd);
     };
   }, [isDragging1, isDragging2]);
 
-  const BeforeAfterSlider = ({ beforeImage, afterImage, position, setPosition, containerRef, onMouseDown }) => (
+  const BeforeAfterSlider = ({ beforeImage, afterImage, position, setPosition, containerRef, onMouseDown, onTouchStart }) => (
     <div
       ref={containerRef}
-      className="relative w-full h-80 md:h-96 overflow-hidden rounded-lg shadow-xl cursor-col-resize select-none"
-      onMouseMove={(e) => handleMouseMove(e, containerRef, setPosition, onMouseDown)}
+      className="relative w-full h-80 md:h-96 overflow-hidden rounded-lg shadow-xl cursor-col-resize select-none touch-none"
+      onMouseMove={(e) => handleMove(e, containerRef, setPosition, onMouseDown)}
+      onTouchMove={(e) => handleMove(e, containerRef, setPosition, onTouchStart)}
     >
       {/* After Image (Background) */}
       <div className="absolute inset-0">
@@ -77,9 +101,10 @@ export default function Reviews() {
 
       {/* Slider Handle */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-col-resize z-10 cursor-pointer"
+        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-col-resize z-10 cursor-pointer touch-none"
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
         onMouseDown={onMouseDown}
+        onTouchStart={onTouchStart}
       >
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
@@ -134,6 +159,7 @@ export default function Reviews() {
               setPosition={setSlider1Position}
               containerRef={container1Ref}
               onMouseDown={handleMouseDown1}
+              onTouchStart={handleTouchStart1}
             />
           </div>
 
@@ -146,6 +172,7 @@ export default function Reviews() {
               setPosition={setSlider2Position}
               containerRef={container2Ref}
               onMouseDown={handleMouseDown2}
+              onTouchStart={handleTouchStart2}
             />
           </div>
         </div>
