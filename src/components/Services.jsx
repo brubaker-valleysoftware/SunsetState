@@ -62,7 +62,7 @@ export default function Services() {
     <section className="bg-sand py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Main heading */}
-        <h1 className="text-teal text-4xl md:text-5xl font-montserrat font-bold text-center mb-10 md:mb-16">Services</h1>
+        <h4 className="text-teal text-4xl md:text-5xl font-montserrat font-bold text-center mb-10 md:mb-16">Services</h4>
 
         {/* Services grid */}
         <div className="grid md:grid-cols-3 gap-8">

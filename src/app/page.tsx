@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Reviews from "../components/Reviews";
 import QuickContact from "../components/QuickContact";
 import WhatWeDo from "../components/WhatWeDo";
 import Services from "../components/Services";
@@ -18,12 +19,17 @@ export default function Home() {
       <div id="quick-contact">
         <QuickContact />
       </div>
+      <div id="reviews">
+        <Reviews />
+      </div>
       <div id="what-we-do">
         <WhatWeDo />
       </div>
       <div id="about">
         <About />
       </div>
+
+
       <div id="services">
         <Services />
       </div>
