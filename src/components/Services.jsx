@@ -23,7 +23,7 @@ export default function Services() {
     "Patio furniture",
     "Scrap metal",
     "Tire pickup",
-    "Mattress recycling",
+    "Mattress removal",
     "Cardboard removal",
     "Pallet pickup",
     "Curbside pickup",
