@@ -49,7 +49,7 @@ export default function Reviews() {
       if (isDragging1 || isDragging2) {
         e.preventDefault();
       }
-      
+
       if (isDragging1) {
         handleMove(e, container1Ref, setSlider1Position, isDragging1);
       }
@@ -62,7 +62,7 @@ export default function Reviews() {
       // Mouse events
       document.addEventListener("mousemove", handleGlobalMove);
       document.addEventListener("mouseup", handleGlobalEnd);
-      
+
       // Touch events
       document.addEventListener("touchmove", handleGlobalMove, { passive: false });
       document.addEventListener("touchend", handleGlobalEnd);
@@ -76,7 +76,15 @@ export default function Reviews() {
     };
   }, [isDragging1, isDragging2]);
 
-  const BeforeAfterSlider = ({ beforeImage, afterImage, position, setPosition, containerRef, onMouseDown, onTouchStart }) => (
+  const BeforeAfterSlider = ({
+    beforeImage,
+    afterImage,
+    position,
+    setPosition,
+    containerRef,
+    onMouseDown,
+    onTouchStart,
+  }) => (
     <div
       ref={containerRef}
       className="relative w-full h-80 md:h-96 overflow-hidden rounded-lg shadow-xl cursor-col-resize select-none touch-none"
@@ -176,8 +184,6 @@ export default function Reviews() {
             />
           </div>
         </div>
-
-        
       </div>
     </section>
   );
