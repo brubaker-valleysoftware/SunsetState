@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Youtube } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
@@ -13,7 +14,7 @@ export default function Contact() {
               {/* Areas We Serve */}
               <div>
                 <h3 className="text-black font-montserrat font-bold text-lg mb-1 uppercase">Areas We Serve</h3>
-                <p className="text-black font-montserrat">Mesa, Gilbert, Chandler, Queen Creek, and San Tan Valley</p>
+                <p className="text-black font-montserrat">Apache, Junction, Coolidge, Florence, Mesa, Gilbert, Chandler, Queen Creek, and San Tan Valley</p>
               </div>
 
               {/* Email */}
@@ -74,8 +75,10 @@ export default function Contact() {
           style={{ backgroundImage: "url(/images/bg-placeholder.png)" }}
         >
           {/* Placeholder for future form component */}
-          <div className="w-4/5 md:w-2/3 h-4/5 m-auto absolute inset-0 flex items-center justify-center bg-sand opacity-80 rounded-md">
-            <div className="text-black text-xl font-montserrat">Contact Form Component Goes Here</div>
+          <div className="">
+            <div className="text-black text-xl font-montserrat">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </div>
