@@ -148,10 +148,10 @@ export default function Reviews() {
 
   return (
     <section className="py-16 bg-sand">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-teal text-4xl md:text-5xl font-montserrat font-bold text-center mb-10 md:mb-16">
+          <h3 className="text-deepteal text-4xl md:text-5xl font-montserrat font-bold text-center mb-10 md:mb-16">
             See The Difference We Make
           </h3>
         </div>

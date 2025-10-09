@@ -27,12 +27,12 @@ export default function Header() {
       <div className="relative z-10 px-4 flex flex-col items-start max-w-6xl mx-auto w-full">
         {/* Main heading */}
         <div className="mb-4">
-          <h1 className="font-montserrat text-4xl md:text-[74px] font-bold leading-tight mt-20">
+          <h1 className="font-montserrat text-[46px] md:text-[74px] font-bold leading-tight mt-20">
             <span className="text-red">SUNSET </span>
             <span className="text-teal">STATE</span>
             <br />
           </h1>
-          <h1 className="font-montserrat text-4xl md:text-[74px] font-bold leading-tight text-orange md:-mt-4">
+          <h1 className="font-montserrat text-[42px] md:text-[74px] font-bold leading-tight text-orange md:-mt-4">
             JUNK REMOVAL
           </h1>
           <p className="font-montserrat text-sand md:text-2xl font-semibold">WHERE CLEAN SPACES MEET DESERT SUNSETS</p>
@@ -41,7 +41,7 @@ export default function Header() {
         {/* CTA Button */}
         <button
           onClick={scrollToContact}
-          className="bg-teal text-sand font-montserrat text-lg font-semibold px-4 md:px-8 py-2 rounded-lg transition-colors duration-300 hover:text-orange"
+          className="bg-deepteal text-sand font-montserrat text-lg font-semibold px-4 md:px-8 py-2 rounded-lg transition-colors duration-300 hover:text-orange"
         >
           GET A FAST ESTIMATE
         </button>

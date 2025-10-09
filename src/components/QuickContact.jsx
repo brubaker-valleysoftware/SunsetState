@@ -15,37 +15,45 @@ export default function QuickContact() {
     <section className="bg-sand py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Main heading */}
-        <h2 className="text-teal text-3xl md:text-4xl font-montserrat font-bold text-center mb-16">
+        <h2 className="text-deepteal text-4xl font-montserrat font-bold text-center mb-10">
           Proudly Serving the East Valley of Arizona
         </h2>
         {/* Two cards container */}
-        <div className="grid md:grid-cols-2 gap-12 md:w-3/4 mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 md:w-3/4 mx-auto">
           {/* Get a Quote Card */}
-          <div className="bg-red rounded-md shadow-2xl border border-black border-2 p-8 text-center">
-            <h3 className="text-sand text-3xl font-montserrat font-bold mb-8">GET A QUOTE</h3>
-            <button 
+          <div
+            className="bg-deepteal rounded-md border border-black border-1 p-8 text-center"
+            style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)" }}
+          >
+            <h3 className="text-sand text-2xl md:text-3xl font-montserrat font-bold mb-2">GET A QUOTE</h3>
+            <p className="text-sand font-medium font-montserrat mb-6">Fill out our form to get a quick estimate.</p>
+            <button
               onClick={scrollToContact}
-              className="bg-teal text-sand font-montserrat text-lg font-semibold px-8 py-3 rounded-lg hover:text-red transition-opacity"
+              className="bg-orange text-sand font-montserrat md:text-lg font-semibold px-8 py-2 rounded-lg hover:text-deepteal transition-opacity"
             >
-              REACH OUT
+              GET A FAST ESTIMATE
             </button>
           </div>
           {/* Contact Us Card */}
-          <div className="bg-red rounded-md shadow-2xl border border-black border-2 p-8 text-center">
-            <h3 className="text-sand text-3xl font-montserrat font-bold mb-8">CONTACT US</h3>
+          <div
+            className="bg-deepteal rounded-md border border-black border-1 p-8 text-center"
+            style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)" }}
+          >
+            <h3 className="text-sand text-2xl md:text-3xl font-montserrat font-bold mb-2">CONTACT US</h3>
+            <p className="text-sand font-medium font-montserrat mb-6">We're here to help. Call or text us.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:480-942-3373"
-                className="bg-teal text-sand font-montserrat text-lg font-semibold px-8 py-3 rounded-lg hover:text-red transition-opacity text-center"
+                className="w-4/5 mx-auto md:w-full bg-orange text-sand font-montserrat md:text-lg font-semibold px-8 py-2 rounded-lg hover:text-deepteal transition-opacity text-center"
               >
-                CALL
+                CALL US
               </a>
 
               <a
                 href="sms:480-942-3373"
-                className="bg-teal text-sand font-montserrat text-lg font-semibold px-8 py-3 rounded-lg hover:text-red transition-opacity text-center"
+                className="w-4/5 mx-auto md:w-full bg-orange text-sand font-montserrat md:text-lg font-semibold px-8 py-2 rounded-lg hover:text-deepteal transition-opacity text-center"
               >
-                TEXT
+                TEXT US
               </a>
             </div>
           </div>
