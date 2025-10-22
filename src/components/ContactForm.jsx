@@ -34,7 +34,7 @@ export default function ContactForm() {
   return (
     <div>
       <div
-        style={{ width: "100%", minHeight: "500px",  }}
+        style={{ width: "100%", minHeight: "500px", }}
         data-fillout-id="uujVj8vBHDus"
         data-fillout-embed-type="fullscreen"
         data-fillout-inherit-parameters

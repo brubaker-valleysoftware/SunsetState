@@ -22,14 +22,12 @@ export default function Home() {
       <div id="reviews">
         <Reviews />
       </div>
-      <div id="what-we-do">
-        <WhatWeDo />
-      </div>
       <div id="about">
         <About />
       </div>
-
-
+      <div id="services">
+        <WhatWeDo />
+      </div>
       <div id="services">
         <Services />
       </div>

@@ -59,10 +59,12 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-sand py-20 px-6">
+    <section className="bg-sand pb-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Main heading */}
-        <h4 className="text-teal text-4xl md:text-5xl font-montserrat font-bold text-center mb-10 md:mb-16">Services</h4>
+        {/* <h4 className="text-deepteal text-4xl md:text-5xl font-montserrat font-bold text-center mb-10 md:mb-16">
+          Services
+        </h4> */}
 
         {/* Services grid */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -73,7 +75,7 @@ export default function Services() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 justify-items-center">
               {junkRemovalServices.map((service, index) => (
-                <div key={index} className="text-teal font-montserrat text-md font-semibold">
+                <div key={index} className="text-deepteal font-montserrat text-md font-semibold">
                   {service}
                 </div>
               ))}
@@ -88,7 +90,7 @@ export default function Services() {
             <div className="flex flex-col items-center">
               <div className="grid grid-cols-1 gap-2 text-center">
                 {demolitionServices.map((service, index) => (
-                  <div key={index} className="text-teal font-montserrat text-md font-semibold">
+                  <div key={index} className="text-deepteal font-montserrat text-md font-semibold">
                     {service}
                   </div>
                 ))}

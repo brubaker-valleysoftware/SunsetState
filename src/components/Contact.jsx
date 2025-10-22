@@ -8,7 +8,7 @@ export default function Contact() {
         {/* Left Side - Information (40%) */}
         <div className="w-full md:w-2/5 bg-sand px-6 md:px-12 py-12 md:py-20 flex flex-col justify-center">
           <div className="md:max-w-sm md:pl-8 mx-auto">
-            <h1 className="text-orange font-montserrat text-4xl md:text-5xl font-bold mb-6 md:mb-12">Get in Touch</h1>
+            <h1 className="text-deepteal font-montserrat text-4xl md:text-5xl font-bold mb-6 md:mb-12">Get in Touch</h1>
 
             <div className="space-y-8">
               {/* Areas We Serve */}
