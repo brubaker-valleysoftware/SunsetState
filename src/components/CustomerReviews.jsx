@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const reviews = [
   {
@@ -146,7 +146,17 @@ const ReviewCard = ({ review }) => {
 
 export default function CustomerReviews() {
   const [showAll, setShowAll] = useState(false);
-  const displayedReviews = showAll ? reviews : reviews.slice(0, 6);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const initialCount = isMobile ? 3 : 6;
+  const displayedReviews = showAll ? reviews : reviews.slice(0, initialCount);
 
   return (
     <section className="bg-sand py-16 md:py-20 px-6">
@@ -178,13 +188,13 @@ export default function CustomerReviews() {
         </div>
 
         {/* Show More/Less Button */}
-        {reviews.length > 6 && (
+        {reviews.length > initialCount && (
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}
               className="bg-deepteal text-white font-montserrat font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:bg-teal hover:shadow-lg"
             >
-              {showAll ? "Show Less" : `Show All ${reviews.length} Reviews`}
+              {showAll ? "Show Less" : `Show All Reviews`}
             </button>
           </div>
         )}
