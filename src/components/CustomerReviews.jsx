@@ -55,8 +55,7 @@ const reviews = [
     name: "George Fischer",
     rating: 5,
     timeAgo: "4 days ago",
-    review:
-      "Came over next day on time and gave me a great price. Would definitely recommend.",
+    review: "Came over next day on time and gave me a great price. Would definitely recommend.",
   },
   {
     name: "Kaycee S",
@@ -68,8 +67,7 @@ const reviews = [
     name: "Nick Boswell",
     rating: 5,
     timeAgo: "a month ago",
-    review:
-      "Thanks for the great service. Very respectful and expedient.",
+    review: "Thanks for the great service. Very respectful and expedient.",
   },
 ];
 
@@ -79,9 +77,7 @@ const StarRating = ({ rating }) => {
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
-          className={`w-5 h-5 ${
-            index < rating ? "text-orange" : "text-gray-300"
-          }`}
+          className={`w-5 h-5 ${index < rating ? "text-orange" : "text-gray-300"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -109,9 +105,7 @@ const ReviewCard = ({ review }) => {
           {initials}
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-montserrat font-semibold text-deepteal text-lg truncate">
-            {review.name}
-          </h4>
+          <h4 className="font-montserrat font-semibold text-deepteal text-lg truncate">{review.name}</h4>
           <p className="text-gray-500 text-sm font-montserrat">{review.timeAgo}</p>
         </div>
       </div>
@@ -122,9 +116,7 @@ const ReviewCard = ({ review }) => {
       </div>
 
       {/* Review Text */}
-      <p className="text-gray-700 font-montserrat text-sm leading-relaxed flex-1">
-        "{review.review}"
-      </p>
+      <p className="text-gray-700 font-montserrat text-sm leading-relaxed flex-1">"{review.review}"</p>
 
       {/* Google Icon */}
       <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2">
@@ -161,28 +153,17 @@ export default function CustomerReviews() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-deepteal text-4xl md:text-5xl font-montserrat font-bold mb-4">
-            What Our Customers Say
-          </h2>
+          <h2 className="text-deepteal text-4xl md:text-5xl font-montserrat font-bold mb-4">What Our Customers Say</h2>
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  className="w-7 h-7 text-orange"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
+                <svg key={i} className="w-7 h-7 text-orange" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
             </div>
-            <span className="text-deepteal font-montserrat font-semibold text-xl">
-              5.0
-            </span>
-            <span className="text-gray-600 font-montserrat">
-              ({reviews.length} Reviews)
-            </span>
+            <span className="text-deepteal font-montserrat font-semibold text-xl">5.0</span>
+            <span className="text-gray-600 font-montserrat">({reviews.length} Reviews)</span>
           </div>
           <p className="text-gray-600 font-montserrat text-lg max-w-2xl mx-auto">
             Don't just take our word for it — hear from our satisfied customers

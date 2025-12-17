@@ -33,7 +33,8 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Sunset State Junk Removal",
-  description: "Junk removal services for residential and commercial properties, also offering hauling and light demo services.",
+  description:
+    "Junk removal services for residential and commercial properties, also offering hauling and light demo services.",
 };
 
 export default function RootLayout({
@@ -44,10 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1ZBZ0VXE36"
-          strategy="afterInteractive"
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-1ZBZ0VXE36" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
