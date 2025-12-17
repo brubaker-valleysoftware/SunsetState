@@ -6,6 +6,7 @@ import Reviews from "../components/Reviews";
 import QuickContact from "../components/QuickContact";
 import WhatWeDo from "../components/WhatWeDo";
 import Services from "../components/Services";
+import CustomerReviews from "../components/CustomerReviews";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 
@@ -30,6 +31,9 @@ export default function Home() {
       </div>
       <div id="services">
         <Services />
+      </div>
+      <div id="customer-reviews">
+        <CustomerReviews />
       </div>
       <div id="cta">
         <CTA />
