@@ -1,73 +1,194 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
+function getTimeAgo(dateString) {
+  const now = new Date();
+  const date = new Date(dateString);
+  const seconds = Math.floor((now - date) / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  const weeks = Math.floor(days / 7);
+  const months = Math.floor(days / 30);
+  const years = Math.floor(days / 365);
+
+  if (years > 0) return years === 1 ? "a year ago" : `${years} years ago`;
+  if (months > 0) return months === 1 ? "a month ago" : `${months} months ago`;
+  if (weeks > 0) return weeks === 1 ? "a week ago" : `${weeks} weeks ago`;
+  if (days > 0) return days === 1 ? "a day ago" : `${days} days ago`;
+  if (hours > 0) return hours === 1 ? "an hour ago" : `${hours} hours ago`;
+  if (minutes > 0) return minutes === 1 ? "a minute ago" : `${minutes} minutes ago`;
+  return "just now";
+}
+
 const reviews = [
   {
-    name: "Garrett Gonzales",
+    name: "Mitch Erickson",
     rating: 5,
-    timeAgo: "3 weeks ago",
+    date: "2026-05-25",
     review:
-      "Sunset State Junk Removal is great! They were able to clean up the side of my yard on the same day I reached out! I appreciate how fast, friendly, and professional their service was!",
+      "Fantastic customer service. My junk problem was solved quickly, professionally and all for a very reasonable cost. The area of the yard was left in better condition than before I starded piling debris there. Highly recommended. I will definately be utilizing Sunset for future projects. Thank you Sunset! You are the best!",
+  },
+  {
+    name: "Reed Adams",
+    rating: 5,
+    date: "2026-05-23",
+    review:
+      "They showed up right on time and took care of everything! Sunset cleaned up my space and was extremely professional. So glad to have my full yard back!",
+  },
+  {
+    name: "Nadia Untalan",
+    rating: 5,
+    date: "2026-05-23",
+    review:
+      "I had a great experience with Sunset State Junk Removal. Fernand is very welcoming and nice guy. He cleaned out my garage in a timely manner and definitely made my move out less stressful.",
+  },
+  {
+    name: "Tessa Pellham",
+    rating: 5,
+    date: "2026-05-20",
+    review:
+      "We had an excellent experience with Sunset State Junk Removal from start to finish. Fernand was professional, punctual, and extremely hardworking. He arrived on time, worked quickly, and handled everything with care and efficiency.",
+  },
+  {
+    name: "London Carsh",
+    rating: 5,
+    date: "2026-05-18",
+    review:
+      "Fernando was so friendly, professional, and fast! They came out only a few hours after my inquiry. Would definitely recommend their services.",
+  },
+  {
+    name: "Dan Franey",
+    rating: 5,
+    date: "2026-05-18",
+    review: "Very professional and great pricing, quick turnaround.",
+  },
+  {
+    name: "Jacob Schneidmiller",
+    rating: 5,
+    date: "2026-05-04",
+    review: "Was very friendly, on time, and efficient! Will definately use him again in the future.",
+  },
+  {
+    name: "Jessica Hayes",
+    rating: 5,
+    date: "2026-05-04",
+    review: "Fantastic service, on time fairly priced and very kind. Would recommend, would call again 10/10",
+  },
+  {
+    name: "Kayla Dixon",
+    rating: 5,
+    date: "2026-04-25",
+    review:
+      "Fernand was at our residence within 30 minutes of asking for his services. He is very kind and respectful! 5 stars!!",
+  },
+  {
+    name: "J R",
+    rating: 5,
+    date: "2026-04-25",
+    review:
+      "I had a great experience with Sunset State Junk Removal. Everything was easy and straightforward. He showed up right on time, which I really appreciated, and immediately got to work without any hassle. What stood out the most was how respectful and efficient he was.",
+  },
+  {
+    name: "Blue Desert Pools",
+    rating: 5,
+    date: "2026-03-25",
+    review:
+      "These guys are always quick and professional. Scheduling is a breeze and the customer service is unmatched! The after photos are great as well. Thank you!",
+  },
+  {
+    name: "Justin",
+    rating: 5,
+    date: "2026-02-25",
+    review:
+      "Quick, efficient, and reliable! I made a last minute call to get some garage clutter cleared and it was taken care of in less than 30 minutes. Would highly recommend to anyone who needs junk removal done right, and at a great price.",
+  },
+  {
+    name: "Jeff Waliszewski",
+    rating: 5,
+    date: "2026-02-25",
+    review: "Friendly, very reasonable and did a great job!",
+  },
+  {
+    name: "Dennis Kvasnikov",
+    rating: 5,
+    date: "2026-02-25",
+    review:
+      "I had an awesome experience with Sunset State Junk Removal. They helped me clear out a big pile of yard waste, and the whole process was smooth from start to finish. The team showed up on time, worked quickly, and handled everything with care.",
+  },
+  {
+    name: "Gage Farmer",
+    rating: 5,
+    date: "2026-01-25",
+    review:
+      "On time, professional, and very reasonable price! Will be using them for any future junk/trash removal needs!",
+  },
+  {
+    name: "George Fischer",
+    rating: 5,
+    date: "2025-12-25",
+    review: "Came over next day on time and gave me a great price. Would definitely recommend.",
   },
   {
     name: "Kathy Swistek",
     rating: 5,
-    timeAgo: "a week ago",
+    date: "2025-12-25",
     review:
       "Very good experience. After filling out online request for quote I received a text immediately and sent some pictures over of the stuff we had to pick up. I received a price almost immediately and we scheduled a pick up for the following day.",
   },
   {
-    name: "Bryce Montague",
+    name: "Garrett Gonzales",
     rating: 5,
-    timeAgo: "2 months ago",
+    date: "2025-11-25",
     review:
-      "Communication and transparency is most important when choosing which company to hire. The team over at Sunset State Junk Removal is incredibly responsive and got the job done in a timely manner. I could not have asked for a better experience.",
+      "Sunset State Junk Removal is great! They were able to clean up the side of my yard on the same day I reached out! I appreciate how fast, friendly, and professional their service was!",
+  },
+  {
+    name: "Kaycee S",
+    rating: 5,
+    date: "2025-11-25",
+    review: "Responds quickly and gets the job done fast! Great workers.",
   },
   {
     name: "Noah Clarke",
     rating: 5,
-    timeAgo: "a month ago",
+    date: "2025-11-25",
     review:
       "Fast and Get the job done! My yard n garage look great! They go above and beyond for customers and couldn't have called for a better company to remove my junk!",
   },
   {
     name: "Michael Attwood",
     rating: 5,
-    timeAgo: "a month ago",
+    date: "2025-11-25",
     review:
       "They arrived on time. The owner took the time to listen to what I wanted removed and did so in a timely manner. He then took his leaf blower and cleared the area. Thank you Fernand and crew! You did a great job!",
   },
   {
-    name: "Omegalul",
+    name: "Nick Boswell",
     rating: 5,
-    timeAgo: "2 months ago",
+    date: "2025-11-25",
+    review: "Thanks for the great service. Very respectful and expedient.",
+  },
+  {
+    name: "Bryce Montague",
+    rating: 5,
+    date: "2025-10-25",
     review:
-      "Sunset State Junk Removal was awesome! They showed up on time, worked super fast, and were really friendly. Pricing was fair and everything was cleaned up perfectly. I'd definitely use them again and recommend them to anyone needing junk gone!",
+      "Communication and transparency is most important when choosing which company to hire. The team over at Sunset State Junk Removal is incredibly responsive and got the job done in a timely manner. I could not have asked for a better experience.",
   },
   {
     name: "Lavish Crew",
     rating: 5,
-    timeAgo: "2 months ago",
+    date: "2025-10-25",
     review:
       "Fernand and family from Sunset State were AMAZING!! They showed up right on time, and were extremely communicative throughout the whole process. They came out a day after I contacted them and offered a VERY fair price for the work.",
   },
   {
-    name: "George Fischer",
+    name: "Omegalul",
     rating: 5,
-    timeAgo: "4 days ago",
-    review: "Came over next day on time and gave me a great price. Would definitely recommend.",
-  },
-  {
-    name: "Kaycee S",
-    rating: 5,
-    timeAgo: "a month ago",
-    review: "Responds quickly and gets the job done fast! Great workers.",
-  },
-  {
-    name: "Nick Boswell",
-    rating: 5,
-    timeAgo: "a month ago",
-    review: "Thanks for the great service. Very respectful and expedient.",
+    date: "2025-10-25",
+    review:
+      "Sunset State Junk Removal was awesome! They showed up on time, worked super fast, and were really friendly. Pricing was fair and everything was cleaned up perfectly. I'd definitely use them again and recommend them to anyone needing junk gone!",
   },
 ];
 
@@ -106,7 +227,7 @@ const ReviewCard = ({ review }) => {
         </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-montserrat font-semibold text-deepteal text-lg truncate">{review.name}</h4>
-          <p className="text-gray-500 text-sm font-montserrat">{review.timeAgo}</p>
+          <p className="text-gray-500 text-sm font-montserrat">{getTimeAgo(review.date)}</p>
         </div>
       </div>
 

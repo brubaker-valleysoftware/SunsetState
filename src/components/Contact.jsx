@@ -14,7 +14,9 @@ export default function Contact() {
               {/* Areas We Serve */}
               <div>
                 <h3 className="text-black font-montserrat font-bold text-lg mb-1 uppercase">Areas We Serve</h3>
-                <p className="text-black font-montserrat">Apache, Junction, Coolidge, Florence, Mesa, Gilbert, Chandler, Queen Creek, and San Tan Valley</p>
+                <p className="text-black font-montserrat">
+                  Apache, Junction, Coolidge, Florence, Mesa, Gilbert, Chandler, Queen Creek, and San Tan Valley
+                </p>
               </div>
 
               {/* Email */}
@@ -75,7 +77,7 @@ export default function Contact() {
           style={{ backgroundImage: "url(/images/bg-placeholder.png)" }}
         >
           {/* Placeholder for future form component */}
-          <div className="">
+          <div className="py-12 md:py-20 px-4">
             <div className="text-black text-xl font-montserrat">
               <ContactForm />
             </div>
