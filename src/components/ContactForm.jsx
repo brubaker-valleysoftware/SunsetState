@@ -7,37 +7,22 @@ export default function ContactForm() {
   useEffect(() => {
     setIsClient(true);
 
-    // Load the Jobber stylesheet
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css";
-    link.media = "screen";
-    document.head.appendChild(link);
-
-    // Load the Jobber embed script
+    // Load the Fillout script dynamically
     const script = document.createElement("script");
-    script.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
-    script.setAttribute("clienthub_id", "84a14c43-a448-469a-af0c-e8dbcd932291-2205606");
-    script.setAttribute(
-      "form_url",
-      "https://clienthub.getjobber.com/client_hubs/84a14c43-a448-469a-af0c-e8dbcd932291/public/work_request/embedded_work_request_form?form_id=2205606",
-    );
+    script.src = "https://server.fillout.com/embed/v1/";
     script.async = true;
-    document.body.appendChild(script);
+    document.head.appendChild(script);
 
     return () => {
-      // Cleanup on unmount
-      const existingLink = document.querySelector(
-        'link[href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"]',
-      );
-      if (existingLink) existingLink.remove();
-      const existingScript = document.querySelector(
-        'script[src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"]',
-      );
-      if (existingScript) existingScript.remove();
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
     };
   }, []);
 
+  // Only render the form container after client-side hydration
   if (!isClient) {
     return (
       <div style={{ width: "100%", height: "500px" }} className="flex items-center justify-center bg-gray-100">
@@ -47,8 +32,14 @@ export default function ContactForm() {
   }
 
   return (
-    <div>
-      <div id="84a14c43-a448-469a-af0c-e8dbcd932291-2205606"></div>
+    <div className="contact-form-embed">
+      <div
+        style={{ width: "100%", minHeight: "500px", borderRadius: 0 }}
+        data-fillout-id="uujVj8vBHDus"
+        data-fillout-embed-type="standard"
+        data-fillout-inherit-parameters
+        data-fillout-dynamic-resize
+      ></div>
     </div>
   );
 }

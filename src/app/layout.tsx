@@ -59,8 +59,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${baskerville.variable} ${workSans.variable} ${montserrat.variable} antialiased`}
       >
         {children}
-        {/* Tidio Live Chat — Sunset State Junk Removal */}
-        <Script src="//code.tidio.co/6jfme7yryzlp9uan3fykgep37ehoxu8t.js" strategy="lazyOnload" />
       </body>
     </html>
   );

@@ -72,16 +72,8 @@ export default function Contact() {
         </div>
 
         {/* Right Side - Form Area (60%) */}
-        <div
-          className="w-full min-h-[500px] md:w-3/5 relative bg-center"
-          style={{ backgroundImage: "url(/images/bg-placeholder.png)" }}
-        >
-          {/* Placeholder for future form component */}
-          <div className="py-12 md:py-20 px-4">
-            <div className="text-black text-xl font-montserrat">
-              <ContactForm />
-            </div>
-          </div>
+        <div className="w-full min-h-[500px] md:w-3/5 bg-white overflow-hidden">
+          <ContactForm />
         </div>
       </div>
     </section>

@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.contact-form-embed,
+.contact-form-embed [data-fillout-id],
+.contact-form-embed iframe {
+	border-radius: 0 !important;
+}
+
+.contact-form-embed iframe {
+	display: block;
+}

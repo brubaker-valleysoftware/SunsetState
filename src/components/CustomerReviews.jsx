@@ -23,6 +23,48 @@ function getTimeAgo(dateString) {
 
 const reviews = [
   {
+    name: "Diane Wyatt",
+    rating: 5,
+    date: "2026-07-12",
+    review:
+      "Lots of junk removal choices in AZ. PICK Sunset State Junk Removal and here's WHY: Ecomonically and competitively priced: You get more than what you pay for. Professional: Local-owned business provides better service. Integrity: They do ...",
+  },
+  {
+    name: "E B",
+    rating: 5,
+    date: "2026-07-09",
+    review:
+      "Excellent! They did exactly what they said they would do! Very professional! Friendly and awesome communication! We will absolutely use them again without hesitation! Family owned!",
+  },
+  {
+    name: "Robert Bubik",
+    rating: 5,
+    date: "2026-07-09",
+    review:
+      "Sunset State Junk Removal is the BOMB! I am moving and Fernand meet all my needs to the fullest. Give him a try, you will not be disappointed I promise.",
+  },
+  {
+    name: "brandon reyes",
+    rating: 5,
+    date: "2026-07-09",
+    review:
+      "Excellent service! Very reliable, affordable, and professional. I contacted him about junk removal and everything was taken care of within the hour. I would definitely recommend him to anyone needing junk removed!",
+  },
+  {
+    name: "Geoff Walchli",
+    rating: 5,
+    date: "2026-06-09",
+    review:
+      "Sunset State Junk Removal provided excellent service. Great communication and showed up exactly when they said they would. Will definitely be using them again for any future junk removals! Highly recommend!",
+  },
+  {
+    name: "Michael Zimmerman",
+    rating: 5,
+    date: "2026-06-09",
+    review:
+      "Fernand was amazing. He came into our home and was respectful to everyone, including our pets. Worked diligently to get all the items out of the house without issue or damage to walls or doorframes. He actively asked if there were any ...",
+  },
+  {
     name: "Mitch Erickson",
     rating: 5,
     date: "2026-05-25",
